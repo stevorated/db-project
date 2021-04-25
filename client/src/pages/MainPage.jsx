@@ -22,7 +22,6 @@ export const MainPage = ({
 
   useEffect(() => {
     if (!datePicked) {
-      // return setDatePicked(dayjs().format('YYYY-MM-DD'));
       setDatePicked(`${dayjs()}(Israel Daylight Time)`);
       return;
     }
@@ -36,7 +35,9 @@ export const MainPage = ({
 
     const formattedDate = dayjs(datePicked).format('YYYY-MM-DD');
 
-    if (datePicked) setError(false);
+    if (datePicked) {
+      setError(false);
+    }
 
     (async function fetchData() {
       let res = null;
@@ -56,7 +57,8 @@ export const MainPage = ({
         fetchCurrentDispatch((await res.json()));
       }
     }());
-  }, [datePicked]);
+  },
+  [datePicked]);
 
   return (
     <div style={{ position: 'relative' }}>

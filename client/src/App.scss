@@ -1,0 +1,57 @@
+@import "~react-vis/dist/style";
+
+.hide {
+  display: none!important;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+
+}
+
+.react-datepicker__input-container {
+  grid-column: 5/10;
+  grid-row: 2/4;
+
+  display: flex;
+  justify-content: center;
+
+  input {
+    //color: rgba(100, 250, 250, 1);
+    border-radius: 5px;
+    height: 6vw;
+    max-width: 400px;
+    width: 80vw;
+    min-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid #a28d41;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.react-datepicker__month-container {
+  max-width: 400px;
+  width: 80vw;
+}
+
+.react-datepicker {
+  display: flex;
+}
+
+.react-datepicker-popper {
+  left: unset;
+}
+
+.VictoryContainer {
+  //margin-top: 30%;
+  margin-bottom: 10px;
+  padding: 0 20px;
+}

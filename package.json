@@ -1,0 +1,14 @@
+{
+  "name": "bdfender",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "compose-up-prod": "docker-compose up -d",
+    "compose-up": "docker-compose -f docker-compose-dev.yml up",
+    "compose-down": "docker-compose down",
+    "server": "yarn --cwd server",
+    "client": "yarn --cwd client"
+  }
+
+}

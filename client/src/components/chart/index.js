@@ -1,1 +1,3 @@
-export { ChartContainer } from './ChartContainer';
+import { ChartContainer } from './ChartContainer';
+
+export { ChartContainer };

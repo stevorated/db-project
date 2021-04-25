@@ -17,8 +17,7 @@ export const Day = mongoose.model('days', daySchema);
 export const deleteAllDays = async () => {
   try {
     await Day.deleteMany();
-    console.log('All Data successfully deleted');
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };

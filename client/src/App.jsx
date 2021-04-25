@@ -4,11 +4,12 @@ import thunk from 'redux-thunk';
 import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider as ReduxProvider } from 'react-redux';
-import Switch from 'react-switch';
 import { MainPage } from './pages';
 import { rootReducer } from './store';
+import { Toggle } from './components';
+import { useWindowSize } from './hooks';
 
-// import 'animate.css/animate.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 
 const store = createStore(
@@ -19,50 +20,41 @@ const store = createStore(
 );
 
 export function App() {
+  const size = useWindowSize();
   const [isILS, setIsILS] = useState(true);
+
+  const handleChangeSetIls = () => {
+    setIsILS(!isILS);
+  };
+
   return (
     <ReduxProvider store={store}>
       <AppContainer>
         <Header>BitCoin App</Header>
-        <div style={{ flex: 4 }}>
-          <MainPage isILS={isILS} />
+        <div style={{ flex: 4, paddingBottom: '30px' }}>
+          <MainPage size={size} isILS={isILS} toggleCurrency={handleChangeSetIls} />
         </div>
-        <TogglerContainer>
-          <span>USD</span>
-          <Switch
-            uncheckedIcon={false}
-            checkedIcon={false}
-            offColor="000"
-            onChange={() => {
-              setIsILS(!isILS);
-            }}
-            checked={isILS}
-          />
-          <span>ILS</span>
-        </TogglerContainer>
+        <Toggle
+          isILS={isILS}
+          handleChangeSetIls={handleChangeSetIls}
+        />
       </AppContainer>
     </ReduxProvider>
   );
 }
 
-const Header = styled.h1`
-  flex: 1;
-`;
+export default App;
 
-const TogglerContainer = styled.div`
-  display: flex;
-  min-width: 150px;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom: 20px;
-  flex: 1.5;
+const Header = styled.h1`
+  flex: 0.5;
+  color: rgba(255, 255, 255, 0.8);
 `;
 
 const AppContainer = styled.div`
-  background: rgba(40, 40, 200, 0.1);
+  background: #808080;
   min-height: 100vh;
   display: flex;
-  padding-top: 5vw;
+  padding-top: 50px;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;

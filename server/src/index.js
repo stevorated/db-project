@@ -4,7 +4,7 @@ import parser from 'body-parser';
 import cors from 'cors';
 import errorHandler from 'errorhandler';
 import { Day, deleteAllDays } from './models';
-import { getBitData } from './helpers';
+import { getBitData } from './utils';
 
 const PORT = process.env.PORT || 3001;
 
@@ -44,16 +44,16 @@ app.get('/get/:date', async (req, res) => {
   res.send({
     date,
     ILS: [
-      { name: 'open', earnings: open },
-      { name: 'high', earnings: high },
-      { name: 'low', earnings: low },
-      { name: 'close', earnings: close },
+      { name: 'open', value: open },
+      { name: 'high', value: high },
+      { name: 'low', value: low },
+      { name: 'close', value: close },
     ],
     USD: [
-      { name: 'open', earnings: openUSD },
-      { name: 'high', earnings: highUSD },
-      { name: 'low', earnings: lowUSD },
-      { name: 'close', earnings: closeUSD },
+      { name: 'open', value: openUSD },
+      { name: 'high', value: highUSD },
+      { name: 'low', value: lowUSD },
+      { name: 'close', value: closeUSD },
     ],
   });
 });

@@ -8,15 +8,13 @@ export function PickerContainer({ date, handleChangePickedDate }) {
   return (
     <Container>
       {/* eslint-disable-next-line max-len */}
-      <StyledDatePicker selected={date} onChange={(datePicked) => handleChangePickedDate(datePicked)} />
+      <StyledDatePicker maxDate={new Date()} selected={date} onChange={(datePicked) => handleChangePickedDate(datePicked)} />
     </Container>
   );
 }
 
 const Container = styled.div`
-  background: lightgrey;  
-  //margin-bottom: 10vw;
-  
+  background: lightgrey;
 `;
 
 const StyledDatePicker = styled(DatePicker)`

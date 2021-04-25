@@ -12,7 +12,7 @@ export function useWindowSize() {
         height: window.innerHeight,
       });
     }
-    // Add event listener
+
     window.addEventListener('resize', handleResize);
     handleResize();
 

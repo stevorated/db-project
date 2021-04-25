@@ -27,10 +27,8 @@ export const ChartContainer = ({
           loader={<Spinner size="large" />}
           height="380px"
           chartType="ColumnChart"
-          data={[['x', 'price'], ...data.map((item) => Object.values(item))]}
+          data={[['rate', 'price'], ...data.map((item) => Object.values(item))]}
           options={{
-            // backgroundColor: '',
-
             title: date.toString(),
             titleTextStyle: {
               fontSize: width < sizes.tablet ? 12 : 13,

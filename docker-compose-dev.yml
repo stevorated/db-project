@@ -28,6 +28,8 @@ services:
       context: ./server
       dockerfile: Dockerfile
     restart: unless-stopped
+    env_file:
+      - .env
     volumes:
       - ./server/src:/usr/app/src
       - ./server/node_modules:/usr/app/node_modules

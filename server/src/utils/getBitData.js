@@ -4,8 +4,8 @@ import to from 'await-to-js';
 export const getBitData = async () => {
   const [error, { data }] = await to(
     axios.get(
-      'https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=BTC&market=ILS&apikey=MFU1KKQS6EN5TUKL'
-    )
+      `https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=BTC&market=ILS&apikey=${process.env.API_KEY}`,
+    ),
   );
 
   if (error) {

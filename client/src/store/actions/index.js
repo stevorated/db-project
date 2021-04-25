@@ -1,1 +1,1 @@
-export { FETCH_DAY, fetchCurrentDay } from './days.actions';
+export { FETCH_DAY, fetchCurrentDay } from './day.actions';

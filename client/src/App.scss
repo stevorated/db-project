@@ -13,6 +13,7 @@
 }
 
 .react-datepicker__input-container {
+  transition: all 0.1s linear;
   grid-column: 5/10;
   grid-row: 2/4;
 
@@ -49,7 +50,7 @@
 .react-datepicker__month-container {
   max-width: 600px;
   width: 85vw;
-  min-height: 300px;
+  min-height: 410px;
 }
 
 .react-datepicker {
@@ -57,7 +58,8 @@
 }
 
 .react-datepicker-popper {
-  left: 8%!important;
+  left: 0;
+  height: 380px;
 }
 
 .VictoryContainer {

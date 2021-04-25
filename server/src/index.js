@@ -16,12 +16,7 @@ app.use(errorHandler());
 
 app.use(cors({ origin: true }));
 
-app.get('/getAll', async (req, res) => {
-  const days = await Day.find();
-
-  return res.sendStatus(200).send(days);
-});
-
+// eslint-disable-next-line consistent-return
 app.get('/get/:date', async (req, res) => {
   const { date: dateParam } = req.params;
 

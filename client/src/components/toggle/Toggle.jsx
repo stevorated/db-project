@@ -1,7 +1,6 @@
 import Switch from 'react-switch';
 import React from 'react';
 import { FaShekelSign, FaDollarSign } from 'react-icons/fa';
-import { IconContext } from 'react-icons';
 import styled from 'styled-components';
 
 export const Toggle = ({ isILS, handleChangeSetIls }) => (
@@ -12,8 +11,8 @@ export const Toggle = ({ isILS, handleChangeSetIls }) => (
     <Switch
       uncheckedIcon={false}
       checkedIcon={false}
-      onColor="#5C5C5C"
-      offColor="#D4D4D4"
+      onColor="#D4D4D4"
+      offColor="#5C5C5C"
       onChange={() => handleChangeSetIls()}
       checked={isILS}
     />

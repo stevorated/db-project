@@ -74,7 +74,7 @@ export const MainPage = ({
             textAlign: 'center',
           }}
         >
-          The date does not exist
+          The Date Does Not Exist, Pick another one.
         </WarningAlert>
       )}
       <PickerContainer date={startDate} handleChangePickedDate={handleChangePickedDate} />

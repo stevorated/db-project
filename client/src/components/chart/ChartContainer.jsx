@@ -146,6 +146,7 @@ const CurrencyBtnContainer = styled.div`
 const Card = styled.div`
   position: relative;
   //max-width: 600px;
+  min-width: 400px;
   //width: 80vw;
   max-height: 380px;
   display:flex;

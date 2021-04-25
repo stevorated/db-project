@@ -19,4 +19,5 @@ const Container = styled.div`
 
 const StyledDatePicker = styled(DatePicker)`
   width: 100%;
+  background: transparent;
 `;
